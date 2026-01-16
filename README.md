@@ -18,3 +18,8 @@ Simple front-end for a hackathon portal for a club in VIT.
 - CSS 
 - JavaScript (Vanilla)
 - SVG Icons
+
+# Dummy Login
+
+Email: admin
+Password: admin123
