@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevJams - Tech Hackathon 2026</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/logo.png" type="image/png">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <svg class="logo-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Pixelate
+            </div>
+            <div class="nav-links">
+                <a href="#" onclick="showPage('landing'); return false;">Home</a>
+                <a href="#" onclick="showPage('about'); return false;">About</a>
+                <a href="#" onclick="showPage('tracks'); return false;">Tracks</a>
+            </div>
+            <button class="nav-btn" id="navLoginBtn" onclick="showPage('login')">Login</button>
+            <button class="logout-btn" id="navLogoutBtn" onclick="handleLogout()" style="display: none;">Logout</button>
+        </div>
+    </nav>
+
+    <div id="landingPage" class="page active">
+        <div class="hero">
+            <h1><span class="dev">DEV</span>JAMS 26'</h1>
+            <p>Join developers, designers, and innovators from all branches VIT for an unforgettable weekend of coding, creativity, and collaboration.</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number">250+</div>
+                    <div class="stat-label">Participants</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">₹50K</div>
+                    <div class="stat-label">In Prizes</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">48</div>
+                    <div class="stat-label">Hours</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>
+                        <svg class="card-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" stroke="#f97316" stroke-width="2"/>
+                            <path d="M12 6V12L16 14" stroke="#f97316" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        Event Timeline
+                    </h3>
+                    <p><strong>March 15-17, 2026</strong></p>
+                    <p>A full weekend of hacking, workshops, and networking. From kickoff on Friday evening to final presentations on Sunday.</p>
+                </div>
+
+                <div class="card">
+                    <h3>
+                        <svg class="card-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 11L12 14L22 4" stroke="#f97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M21 12V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H16" stroke="#f97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Challenge Tracks
+                    </h3>
+                    <ul class="tracks-list">
+                        <li>
+                            <svg class="track-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#f97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M2 17L12 22L22 17" stroke="#f97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M2 12L12 17L22 12" stroke="#f97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            AI & Machine Learning
+                        </li>
+                        <li>
+                            <svg class="track-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="3" y="3" width="7" height="7" stroke="#f97316" stroke-width="2"/>
+                                <rect x="14" y="3" width="7" height="7" stroke="#f97316" stroke-width="2"/>
+                                <rect x="14" y="14" width="7" height="7" stroke="#f97316" stroke-width="2"/>
+                                <rect x="3" y="14" width="7" height="7" stroke="#f97316" stroke-width="2"/>
+                            </svg>
+                            Web3 & Blockchain
+                        </li>
+                        <li>
+                            <svg class="track-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 6L9 17L4 12" stroke="#f97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12" stroke="#f97316" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            HealthTech Innovation
+                        </li>
+                        <li>
+                            <svg class="track-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2C6.5 2 2 6.5 2 12S6.5 22 12 22 22 17.5 22 12 17.5 2 12 2Z" stroke="#f97316" stroke-width="2"/>
+                                <path d="M12 6V12L15 15" stroke="#f97316" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            Climate & Sustainability
+                        </li>
+                        <li>
+                            <svg class="track-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="2" y="2" width="20" height="20" rx="2" stroke="#f97316" stroke-width="2"/>
+                                <path d="M8 8H16V16H8V8Z" stroke="#f97316" stroke-width="2"/>
+                            </svg>
+                            Gaming & Interactive Media
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>
+                        <svg class="card-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="#f97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Amazing Prizes
+                    </h3>
+                    <p><strong>Grand Prize: ₹20,000</strong></p>
+                    <p>Plus category winners, sponsor awards, and appreciation from the club members. Every participant gets exclusive perks!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>
+                        <svg class="card-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="#f97316" stroke-width="2"/>
+                            <circle cx="12" cy="10" r="3" stroke="#f97316" stroke-width="2"/>
+                        </svg>
+                        What You'll Get
+                    </h3>
+                    <p>Free meals and snacks throughout the event, mentorship from senior club members, a chance to win cash prizes and awards, and networking opportunities with other like-minded students.</p>
+                </div>
+
+                <div class="card">
+                    <h3>
+                        <svg class="card-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="#f97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="9" cy="7" r="4" stroke="#f97316" stroke-width="2"/>
+                            <path d="M23 21V19C22.9993 18.1137 22.7044 17.2528 22.1614 16.5523C21.6184 15.8519 20.8581 15.3516 20 15.13" stroke="#f97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M16 3.13C16.8604 3.35031 17.623 3.85071 18.1676 4.55232C18.7122 5.25392 19.0078 6.11683 19.0078 7.005C19.0078 7.89318 18.7122 8.75608 18.1676 9.45769C17.623 10.1593 16.8604 10.6597 16 10.88" stroke="#f97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Who Can Join
+                    </h3>
+                    <p>Students from all branches and year are welcome! Form teams of 2-5 people or join as a solo programmer and find teammates at the event.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="loginPage" class="page">
+        <div class="login-container">
+            <div>
+                <a href="#" class="back-link" onclick="showPage('landing'); return false;">← Back to Home</a>
+                <div class="login-box">
+                    <div class="login-header">
+                        <h2>Welcome Back</h2>
+                        <p>Login to access your hackathon dashboard</p>
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" id="email" placeholder="your.email@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" id="password" placeholder="Enter your password">
+                    </div>
+                    <button class="login-btn" onclick="handleLogin()">Sign In</button>
+                    <div id="errorMessage" class="error-message"></div>
+                    <p style="text-align: center; color: #6b7280; margin-top: 1.5rem; font-size: 0.9rem;">
+                        Don't have an account? <a href="#" style="color: #f97316; font-weight: 600;">Register here</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="aboutPage" class="page">
+        <div class="about-section">
+            <h1>About DevJams</h1>
+            <p>DevJams is more than just a hackathon—it's a movement to bring together the brightest minds in VIT to solve real-world problems and push the boundaries of innovation.</p>
+            <p>Since the start of our club, we've hosted over 20 hackathons in VIT, bringing together more than 10,000 students from diverse backgrounds. Our events have resulted in groundbreaking projects, successful startups, and countless friendships.</p>
+            <h2>Our Mission</h2>
+            <p>To create an inclusive environment where developers, designers, and innovators can collaborate, learn, and build solutions that make a real impact on the world.</p>
+            <h2>What Makes Us Different</h2>
+            <ul>
+                <li>Built by students, for students</li>
+                <li>Hands-on problem statements focused on learning, creativity, and impact</li>
+                <li>Beginner-friendly & inclusive — all skill levels welcome</li>
+                <li>Fast-paced, high-energy hackathon with real deliverables</li>
+                <li>Cool prizes, swag, and bragging rights 🏆</li>
+                <li>A chance to build, ship, and showcase your ideas in 48 hours</li>
+            </ul>
+            <h2>Join Our Community</h2>
+            <p>Whether you're a seasoned developer or just starting your coding journey, DevJams welcomes you. Connect with like-minded individuals, learn new skills, and be part of something bigger.</p>
+        </div>
+    </div>
+
+    <div id="tracksPage" class="page">
+        <div class="hero">
+            <h1>Challenge Tracks</h1>
+            <p>Choose your track and build innovative solutions that make a real impact.</p>
+        </div>
+        <div class="info-section">
+            <div class="cards-grid2">
+                <div class="event-card">
+                    <div class="event-content">
+                        <span class="event-badge">Track 01</span>
+                        <h3 class="event-title">AI & Machine Learning</h3>
+                        <p class="event-desc">Push the boundaries of artificial intelligence and machine learning. Build intelligent systems that learn, adapt, and solve complex problems. From computer vision to natural language processing, create AI solutions that transform how we interact with technology.</p>
+                        <div class="event-meta">
+                            <span>🎯 AI & Machine Learning</span>
+                            <span>💰 ₹10,000 Prize</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-content">
+                        <span class="event-badge">Track 02</span>
+                        <h3 class="event-title">Web3 & Blockchain</h3>
+                        <p class="event-desc">Build the decentralized future with blockchain technology. Create smart contracts, DeFi applications, NFT platforms, or DAOs. Leverage Web3 to develop transparent, secure, and trustless systems that reimagine digital ownership and transactions.</p>
+                        <div class="event-meta">
+                            <span>🎯 Web3 & Blockchain</span>
+                            <span>💰 ₹10,000 Prize</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-content">
+                        <span class="event-badge">Track 03</span>
+                        <h3 class="event-title">HealthTech Innovation</h3>
+                        <p class="event-desc">Transform healthcare through innovative technology. Develop solutions for patient care, medical diagnostics, mental health, telemedicine, or health data management. Create tools that make healthcare more accessible, efficient, and patient-centered.</p>
+                        <div class="event-meta">
+                            <span>🎯 HealthTech Innovation</span>
+                            <span>💰 ₹10,000 Prize</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-content">
+                        <span class="event-badge">Track 04</span>
+                        <h3 class="event-title">Climate & Sustainability</h3>
+                        <p class="event-desc">Code for a sustainable planet. Build solutions that address climate change, reduce carbon footprints, promote renewable energy, or tackle environmental challenges. From carbon tracking apps to smart agriculture, create technology that protects our Earth.</p>
+                        <div class="event-meta">
+                            <span>🎯 Climate & Sustainability</span>
+                            <span>💰 ₹10,000 Prize</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-content">
+                        <span class="event-badge">Track 05</span>
+                        <h3 class="event-title">Gaming & Interactive Media</h3>
+                        <p class="event-desc">Create immersive gaming and interactive experiences. Build innovative games, VR/AR applications, interactive storytelling platforms, or gamified educational tools. Combine creativity with technology to craft experiences that engage, entertain, and inspire.</p>
+                        <div class="event-meta">
+                            <span>🎯 Gaming & Interactive Media</span>
+                            <span>💰 ₹10,000 Prize</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="dashboardPage" class="page">
+        <div class="dashboard">
+            <div class="dashboard-header">
+                <h1>Your Dashboard</h1>
+                <button class="logout-btn" onclick="handleLogout()">Logout</button>
+            </div>
+            <div class="welcome-card">
+                <h2>Welcome to DevJams 2026!</h2>
+                <p>You're all set for the hackathon. Check your team details below, track your progress, and get ready to build something incredible this weekend!</p>
+            </div>
+            <div class="dashboard-grid">
+                <div class="dash-card">
+                    <h3>👥 Your Team</h3>
+                    <p><strong>Code Crusaders</strong></p>
+                    <p>4 members</p>
+                    <small>Track: AI & Machine Learning</small>
+                </div>
+                <div class="dash-card">
+                    <h3>📅 Schedule</h3>
+                    <p><strong>Next Event</strong></p>
+                    <p>Opening Ceremony</p>
+                    <small>March 15, 2026 • 6:00 PM</small>
+                </div>
+                <div class="dash-card">
+                    <h3>🛠️ Resources</h3>
+                    <p><strong>Development Tools</strong></p>
+                    <p>APIs, SDKs & Documentation</p>
+                    <small>Access all resources</small>
+                </div>
+                <div class="dash-card">
+                    <h3>📤 Submission</h3>
+                    <p><strong>Project Deadline</strong></p>
+                    <p>Not submitted yet</p>
+                    <small>Due: March 17, 5:00 PM</small>
+                </div>
+                <div class="dash-card">
+                    <h3>🏆 Leaderboard</h3>
+                    <p><strong>Team Rankings</strong></p>
+                    <p>View Standings</p>
+                    <small>Earn points</small>
+                </div>
+                <div class="dash-card">
+                    <h3>🏆 Prizes</h3>
+                    <p><strong>Prize Categories</strong></p>
+                    <p>View all prizes</p>
+                    <small>Check eligibility</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
